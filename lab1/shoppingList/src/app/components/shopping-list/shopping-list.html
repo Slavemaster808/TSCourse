@@ -1,0 +1,26 @@
+<div class="shopping-list">
+    <h1>Shopping List</h1>
+
+    <app-add-item-form (itemAdded)="addItem($event)"></app-add-item-form>
+
+    <div class="filters">
+        <button (click)="setFilter('all')" [class.active]="filter === 'all'" class="filter-btn">
+            All
+        </button>
+        <button (click)="setFilter('purchased')" [class.active]="filter === 'purchased'" class="filter-btn">
+            Purchased
+        </button>
+        <button (click)="setFilter('active')" [class.active]="filter === 'active'" class="filter-btn">
+            Unpurchased
+        </button>
+    </div>
+
+    <div class="items-list">
+        <app-shopping-item *ngFor="let item of filteredItems" [item]="item"
+            (togglePurchased)="toggleItemPurchased($event)" (delete)="deleteItem($event)"></app-shopping-item>
+    </div>
+
+    <div *ngIf="filteredItems.length === 0" class="empty-state">
+        List is empty
+    </div>
+</div>

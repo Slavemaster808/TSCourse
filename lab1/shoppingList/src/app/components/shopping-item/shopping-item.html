@@ -1,0 +1,13 @@
+<div class="item" [class.purchased]="item.purchased">
+    <span class="item-name">{{ item.name }}</span>
+    <span class="item-quantity">X{{ item.quantity }}</span>
+
+    <div class="item-actions">
+        <button (click)="togglePurchased.emit(item.id)" class="btn purchased-btn" [class.active]="item.purchased">
+            {{ item.purchased ? '✓' : 'Purchase' }}
+        </button>
+        <button (click)="delete.emit(item.id)" class="btn delete-btn">
+            Delete
+        </button>
+    </div>
+</div>

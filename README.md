@@ -1,1 +1,1 @@
-# TSCourse
+# TypeScript + Angular Course 3rd term
