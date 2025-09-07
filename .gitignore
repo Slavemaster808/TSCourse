@@ -31,4 +31,4 @@ e2e/*.map
 .DS_Store/
 
 # Other
-.vscode/
+lab1/.vscode/
